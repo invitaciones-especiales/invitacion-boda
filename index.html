@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f7f3e9">
+<title>Geraldine & Jhoreldy | ¡Nos casamos!</title>
+<style>
+:root{--paper:#f7f3e9;--paper2:#fffdf7;--olive:#686b45;--sage:#aeb49a;--ink:#38382d;--brown:#826b56;--line:#d7d1c2}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+button,a{font:inherit}.page{max-width:520px;margin:auto;background:var(--paper2);min-height:100vh;box-shadow:0 0 40px #49462a12;position:relative;overflow:hidden}
+.section{position:relative;padding:42px 26px;text-align:center;border:1px solid var(--line);margin:12px;background:var(--paper2)}
+.section:before,.section:after{content:"❧";position:absolute;color:var(--sage);font-size:35px;opacity:.9}.section:before{top:7px;left:10px;transform:rotate(-35deg)}.section:after{right:10px;bottom:4px;transform:rotate(145deg)}
+.eyebrow{font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;color:var(--olive)}
+h1,h2,p{margin-top:0}h1{font-size:34px;font-weight:normal;line-height:1.2}h2{font-size:28px;font-weight:normal;line-height:1.15;margin-bottom:16px;color:var(--olive)}
+.script{font-style:italic;color:var(--brown);font-size:clamp(25px,7vw,38px);line-height:1.2}.small-script{font-style:italic;color:var(--brown);font-size:19px}
+p{line-height:1.65}.cover{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(ellipse at top,#fffdf7,#e9e7d8)}
+.envelope-scene{width:100%;max-width:450px;text-align:center;padding:35px 18px}.envelope{width:min(100%,310px);height:205px;position:relative;margin:24px auto 20px;display:block;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 12px 10px #39392220);perspective:1000px}
+.env-back,.env-left,.env-right,.env-bottom,.env-flap{position:absolute;inset:0}.env-back{background:#b6b99e}.env-left{background:#c6c9b2;clip-path:polygon(0 0,52% 52%,0 100%)}.env-right{background:#c6c9b2;clip-path:polygon(100% 0,48% 52%,100% 100%)}.env-bottom{background:#daddc9;clip-path:polygon(0 100%,50% 43%,100% 100%)}.env-flap{background:#d0d3bd;clip-path:polygon(0 0,100% 0,50% 58%);transform-origin:top;transition:transform .8s;z-index:3}
+.letter{position:absolute;left:7%;right:7%;bottom:10px;height:170px;background:var(--paper2);border:1px solid var(--line);z-index:2;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform .8s .2s}.letter strong{font-weight:normal;font-size:24px}.letter small{font:10px Arial,sans-serif;letter-spacing:.12em;margin-top:10px}.seal{position:absolute;z-index:4;left:50%;top:52%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--olive);color:white;display:grid;place-items:center;font-size:22px;transition:opacity .2s}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:0}.envelope.open .seal{opacity:0}.envelope.open .letter{transform:translateY(-88px);z-index:5}
+.invite{display:none;animation:fade .7s}.invite.show{display:block}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero{padding:0 12px 30px;text-align:center}.hero-photo{width:100%;height:min(112vw,540px);max-height:540px;object-fit:cover;object-position:center 35%;display:block;border:1px solid var(--line)}.hero-copy{padding:26px 18px 12px}.hero-copy h1{margin:12px 0}.names{font-size:clamp(37px,10vw,52px);color:var(--olive);font-style:italic;line-height:1.05}.amp{font-size:26px;display:block;margin:6px}
+.pair-photo{width:85%;max-height:360px;object-fit:cover;border:7px solid white;box-shadow:0 6px 22px #3735221b;transform:rotate(1deg);margin:15px auto}
+.date{font-size:20px;letter-spacing:.06em;color:var(--brown)}.calendar{max-width:330px;margin:20px auto;padding:16px;border:1px solid var(--line);border-radius:14px;background:#fbf9f1}.calendar-head{font-size:17px;margin-bottom:12px}.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.grid span{padding:7px 0;font-size:13px}.grid .dow{color:var(--brown);font-size:11px}.grid .chosen{background:var(--olive);color:#fff;border-radius:50%;font-weight:bold}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:20px 0}.countdown div{background:#f2efe4;border:1px solid #e6e0d1;border-radius:10px;padding:12px 4px}.countdown b{display:block;font-size:23px;font-weight:normal;color:var(--olive)}.countdown small{font:10px Arial,sans-serif;color:var(--brown)}
+.btn{display:inline-block;text-decoration:none;color:white;background:var(--olive);border:1px solid var(--olive);padding:13px 18px;border-radius:30px;margin:7px 0;cursor:pointer}.btn.secondary{background:transparent;color:var(--olive)}.btn.full{display:block;width:100%;max-width:330px;margin:10px auto}.details{display:grid;grid-template-columns:46px 1fr;gap:12px;text-align:left;max-width:340px;margin:20px auto}.icon{width:42px;height:42px;background:var(--olive);color:white;border-radius:50%;display:grid;place-items:center;font-size:19px}.detail-title{font-size:18px;margin-bottom:4px}.detail-copy{font-size:14px;line-height:1.5;margin:0}
+.note{background:#f3f0e5;padding:18px;border-radius:12px;margin:20px 0;font-size:14px}.footer{text-align:center;padding:38px 24px 48px;background:#e8e7d9;color:var(--olive)}.footer .script{font-size:36px}
+#admin{background:#f1eee4;padding:18px;margin:12px;border:1px dashed #a7a88e;border-radius:12px}#admin summary{cursor:pointer;color:var(--olive);font-weight:bold}#admin input,#admin select{width:100%;padding:10px;margin:5px 0 12px;border:1px solid #ccc8b8;border-radius:7px;background:white}#guestList{padding-left:18px;font:13px/1.6 Arial,sans-serif;overflow-wrap:anywhere}.admin-actions{display:flex;gap:8px;flex-wrap:wrap}.admin-actions button{padding:9px 12px;border-radius:8px;border:1px solid var(--olive);background:var(--olive);color:white;cursor:pointer}.admin-help{font:12px/1.5 Arial,sans-serif;color:#615f50}
+@media(min-width:700px){body{padding:22px 0}.page{border-radius:8px;overflow:hidden}}
+</style>
+</head>
+<body>
+<div class="page">
+<section class="cover" id="cover"><div class="envelope-scene">
+<div class="eyebrow">Una invitación especial para ti</div><h1 style="font-size:30px;margin:16px 0 0">Con mucho cariño,<br>para <span id="guestCover">nuestra persona especial</span></h1>
+<button class="envelope" id="envelope" aria-label="Abrir invitación"><span class="env-back"></span><span class="env-left"></span><span class="env-right"></span><span class="env-bottom"></span><span class="env-flap"></span><span class="letter"><strong>¡Nos casamos!</strong><small>TOCA PARA ABRIR</small></span><span class="seal">♡</span></button>
+<div class="small-script">Geraldine & Jhoreldy</div><p style="font-size:12px;color:var(--brown);margin-top:18px">21 · 11 · 2026</p></div></section>
+<article class="invite" id="invite">
+<header class="hero"><img class="hero-photo" src="foto-pareja.jpeg" alt="Geraldine y Jhoreldy"><div class="hero-copy"><div class="eyebrow">Un día para recordar</div><h1>¡Nos casamos!</h1><div class="small-script">Y queremos que formes parte de este día tan especial</div><p class="names">Geraldine <span class="amp">&</span> Jhoreldy</p></div></header>
+<section class="section"><div class="eyebrow">Con la bendición de Dios</div><h2>Nuestra historia</h2><p>Dios nos permitió encontrarnos y caminar juntos. Hoy queremos dar este gran paso, rodeados de las personas que más queremos.</p><img class="pair-photo" src="foto-anillos.jpeg" alt="Detalle de los anillos de compromiso"><p class="small-script">Gracias por ser parte de nuestra historia ♡</p></section>
+<section class="section"><h2>La gran fecha</h2><p class="date">SÁBADO · 21 · NOVIEMBRE · 2026</p><p>5:00 p. m.</p><div class="calendar"><div class="calendar-head">Noviembre 2026</div><div class="grid" id="calendar"></div></div><div class="countdown" id="countdown"><div><b>--</b><small>Días</small></div><div><b>--</b><small>Horas</small></div><div><b>--</b><small>Minutos</small></div><div><b>--</b><small>Segundos</small></div></div><a class="btn full" id="calendarLink" target="_blank" rel="noopener">▦ Guardar la fecha</a></section>
+<section class="section"><h2>Ceremonia y celebración</h2><p>Te esperamos en la casa de Geraldine</p><p><strong>Mz. o Lt. 13, Hiroshima, Pachacútec</strong></p><a class="btn full" href="https://www.google.com/maps/place/11%C2%B050'02.0%22S+77%C2%B008'26.1%22W/@-11.8338823,-77.1431465,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-11.8338823!4d-77.1405716?hl=es&entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">⌖ Ver ubicación</a></section>
+<section class="section"><h2>Algunos detalles importantes</h2>
+<div class="details"><div class="icon">♧</div><div><div class="detail-title">Vestimenta formal</div><p class="detail-copy">Nos encantará verte elegante para esta ocasión. Por favor, evita vestir de blanco.</p></div>
+<div class="icon">♡</div><div><div class="detail-title">Celebración solo para adultos</div><p class="detail-copy">Hemos preparado este momento para compartirlo entre adultos. Agradecemos mucho tu comprensión y cariño.</p></div>
+<div class="icon">✧</div><div><div class="detail-title">Una boda cristiana</div><p class="detail-copy">Celebraremos nuestra unión desde nuestra fe, con música cristiana e instrumental y sin bebidas alcohólicas. Gracias por ayudarnos a mantener la esencia de este día tan especial.</p></div></div>
+<div class="note">Entendemos que pueden surgir dificultades de tiempo o distancia. Si no puedes acompañarnos, agradecemos de corazón que nos lo comuniques con sinceridad.</div><p class="small-script">¡Gracias por comprender y acompañarnos! ♡</p></section>
+<section class="section"><h2>Confirma tu asistencia</h2><p>Por favor, confírmanos antes del <strong>7 de noviembre de 2026</strong>.</p><p id="guestCapacity">Esta invitación es personal.</p><a class="btn full" id="rsvpButton" target="_blank" rel="noopener">☏ Confirmar por WhatsApp</a><p style="font-size:12px;color:var(--brown)">Se abrirá WhatsApp con un mensaje preparado para Geraldine.</p></section>
+<footer class="footer"><div class="script">Gracias</div><p>por ser parte de nuestra historia</p><div style="font-size:26px">♡</div><p>Geraldine & Jhoreldy<br><span class="date">21 · 11 · 2026</span></p></footer>
+</article>
+<details id="admin"><summary>Panel de invitados (administración local)</summary><p class="admin-help">Agrega nombres y cupos, crea enlaces personalizados y exporta el listado a CSV para abrirlo en Excel. Este panel guarda los datos en este navegador/dispositivo; no es una base de datos compartida en internet.</p>
+<label for="guestName">Nombre del invitado o familia</label><input id="guestName" placeholder="Ej. Familia García">
+<label for="guestCount">Cupos permitidos</label><select id="guestCount"><option value="1">1 persona</option><option value="2" selected>2 personas</option></select>
+<div class="admin-actions"><button id="addGuest">Agregar invitado</button><button id="exportCsv">Exportar CSV para Excel</button></div><ul id="guestList"></ul>
+<p class="admin-help">Para probar una invitación personalizada, agrega un nombre y abre el enlace que se genere. Para compartir enlaces reales por internet, esta carpeta debe publicarse en un servicio de alojamiento web.</p></details>
+</div>
+<script>
+const params=new URLSearchParams(location.search);
+const guestName=params.get('para');
+const capacity=Math.max(1,Math.min(2,parseInt(params.get('cupos')||'2',10)||2));
+const cleanName=guestName?guestName.replace(/[<>]/g,'').slice(0,100):'';
+if(cleanName){document.getElementById('guestCover').textContent=cleanName;document.title='Invitación para '+cleanName+' | Geraldine & Jhoreldy'}
+document.getElementById('guestCapacity').textContent=cleanName?`Esta invitación está preparada para ${capacity} ${capacity===1?'persona':'personas'} (${cleanName}).`:'Esta invitación es personal e intransferible.';
+const phone='51936942418';
+function updateRsvp(){const msg=`Hola Geraldine, soy ${cleanName||'[tu nombre]'}. ${cleanName?'Mi invitación es para '+capacity+' '+(capacity===1?'persona':'personas')+'. ':''}Quisiera confirmar mi asistencia a la boda del 21 de noviembre. ${' '.repeat(0)}Mi asistencia es: `;document.getElementById('rsvpButton').href='https://wa.me/'+phone+'?text='+encodeURIComponent(msg)}
+updateRsvp();
+const start=new Date(2026,10,1);const cal=document.getElementById('calendar');['D','L','M','M','J','V','S'].forEach(d=>{let s=document.createElement('span');s.className='dow';s.textContent=d;cal.appendChild(s)});
+const first=new Date(2026,10,1).getDay();for(let i=0;i<first;i++){let s=document.createElement('span');s.textContent='';cal.appendChild(s)}
+for(let d=1;d<=30;d++){let s=document.createElement('span');s.textContent=d;if(d===21)s.className='chosen';cal.appendChild(s)}
+const pad=n=>String(n).padStart(2,'0');
+const target=new Date(2026,10,21,17,0,0);
+function tick(){let diff=Math.max(0,target-new Date());let days=Math.floor(diff/86400000);diff%=86400000;let hours=Math.floor(diff/3600000);diff%=3600000;let mins=Math.floor(diff/60000);let secs=Math.floor(diff%60000/1000);const vals=[days,hours,mins,secs];document.querySelectorAll('#countdown b').forEach((e,i)=>e.textContent=pad(vals[i]))}
+tick();setInterval(tick,1000);
+const dateStart='20261121T170000',dateEnd='20261121T220000';
+document.getElementById('calendarLink').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Boda de Geraldine y Jhoreldy')+'&dates='+dateStart+'/'+dateEnd+'&details='+encodeURIComponent('Ceremonia y celebración. Vestimenta formal. Celebración cristiana, sin bebidas alcohólicas.')+'&location='+encodeURIComponent('Mz. o Lt. 13, Hiroshima, Pachacútec, Perú');
+const env=document.getElementById('envelope');env.addEventListener('click',()=>{env.classList.add('open');setTimeout(()=>{document.getElementById('cover').style.display='none';document.getElementById('invite').classList.add('show');window.scrollTo({top:0,behavior:'smooth'})},800)});
+const storageKey='gj_guest_list_v1';let guests=[];try{guests=JSON.parse(localStorage.getItem(storageKey)||'[]')}catch(e){}
+function renderGuests(){const ul=document.getElementById('guestList');ul.innerHTML='';guests.forEach((g,i)=>{const li=document.createElement('li');const url=new URL(location.href);url.search='';url.searchParams.set('para',g.name);url.searchParams.set('cupos',g.count);li.textContent=`${g.name} — ${g.count} cupo(s) — `;const a=document.createElement('a');a.href=url.href;a.textContent='Abrir enlace';a.target='_blank';a.rel='noopener';li.appendChild(a);ul.appendChild(li)});localStorage.setItem(storageKey,JSON.stringify(guests))}
+document.getElementById('addGuest').addEventListener('click',()=>{const name=document.getElementById('guestName').value.trim();if(!name){alert('Escribe el nombre del invitado o familia.');return}guests.push({name,count:parseInt(document.getElementById('guestCount').value,10)});document.getElementById('guestName').value='';renderGuests()});
+document.getElementById('exportCsv').addEventListener('click',()=>{const rows=[['Invitado/familia','Cupos'],...guests.map(g=>[g.name,g.count])];const csv='\ufeff'+rows.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(';')).join('\r\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='invitados_geraldine_jhoreldy.csv';a.click();URL.revokeObjectURL(a.href)});
+renderGuests();
+</script>
+</body></html>
